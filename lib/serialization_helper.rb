@@ -59,11 +59,11 @@ module SerializationHelper
     end
 
     def self.truncate_table(table)
-      begin
-        ActiveRecord::Base.connection.execute("TRUNCATE #{SerializationHelper::Utils.quote_table(table)}")
-      rescue Exception
-        ActiveRecord::Base.connection.execute("DELETE FROM #{SerializationHelper::Utils.quote_table(table)}")
-      end
+      # begin
+      #   ActiveRecord::Base.connection.execute("TRUNCATE #{SerializationHelper::Utils.quote_table(table)}")
+      # rescue Exception
+      #   ActiveRecord::Base.connection.execute("DELETE FROM #{SerializationHelper::Utils.quote_table(table)}")
+      # end
     end
 
     def self.load_table(table, data, truncate = true)
